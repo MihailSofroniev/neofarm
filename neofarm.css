@@ -1,0 +1,10 @@
+.item-list {
+	height: 200px;
+	width: 300px;
+	overflow-y:auto;
+	border: 1px solid;
+}
+
+.results {
+	display: none;
+}
