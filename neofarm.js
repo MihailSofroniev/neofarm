@@ -10,6 +10,7 @@ let html = '';
 const fetchData = async(path) => {
         const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/${path}`)
         const data = await res.json();
+        //console.log(data);
         return data;
 }
 
@@ -65,13 +66,13 @@ ingredients.addEventListener('click', async(e) => {
         }
     }
     let ingredients = '';
-    console.log(!!ingredients_list)
+    //console.log(!!ingredients_list)
     if(Object.keys(ingredients_list).length > 0)
     {
     	//find the intersection of an array of arrays
         ingredients = Object.values(ingredients_list).reduce((a, b) => a.filter(c => b.includes(c))).join(' ');
     }
-    if(ingredients_list.length > 0) {
+    if(ingredients.length > 0) {
     	document.getElementById('cocktails_you_can_make').innerHTML = "<b> Cocktails you can make with the chosen ingredients: </b><br><p>"+ingredients+"</p>";
     	document.getElementById('cocktails_you_can_make').style.display = 'block';
     } else {
